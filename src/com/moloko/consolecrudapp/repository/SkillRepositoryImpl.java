@@ -22,7 +22,7 @@ public class SkillRepositoryImpl implements GenericRepository<String>{
     private final String filePath = "Skills.txt";
     private final Path path = Paths.get(filePath);
     private boolean listHasChanged = true;
-    private List<String> cacheForAllSkills = null;
+    private List<String> cacheForAll = null;
 
 
     public void allSkillsToConsole(){
@@ -45,11 +45,11 @@ public class SkillRepositoryImpl implements GenericRepository<String>{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            cacheForAllSkills = allSkills;
+            cacheForAll = allSkills;
             listHasChanged = false;
             return allSkills;
         } else {
-            return cacheForAllSkills;
+            return cacheForAll;
         }
     }
 
