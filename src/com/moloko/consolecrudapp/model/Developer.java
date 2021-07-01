@@ -8,33 +8,31 @@ import java.util.List;
  */
 public class Developer {
 
-    private static int genId = 1;
-
-    private int id = genId;
+    private int id;
     private String firstName;
     private String lastName;
     private List<Skill> skills = new ArrayList<>();
 
-    public Developer(String firstName, String lastName, List<Skill> skills) {
+    public Developer(int id, String firstName, String lastName, List<Skill> skills) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.skills = skills;
-        genId++;
     }
 
     // If add one skill
-    public Developer(String firstName, String lastName, Skill skill) {
+    public Developer(int id, String firstName, String lastName, Skill skill) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.skills.add(skill);
-        genId++;
     }
 
     // If add without skill
-    public Developer(String firstName, String lastName) {
+    public Developer(int id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        genId++;
     }
 
     public int getId() {

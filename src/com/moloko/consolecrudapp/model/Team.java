@@ -8,25 +8,23 @@ import java.util.List;
  */
 public class Team {
 
-    private static int genId = 1;
-
-    private int id = genId;
+    private int id;
     private String name;
     private List<Developer> developers = new ArrayList<>();
     private Enum<TeamStatus> status = TeamStatus.ACTIVE;
 
 
-    public Team(String name, List<Developer> developers) {
+    public Team(int id, String name, List<Developer> developers) {
+        this.id = id;
         this.name = name;
         this.developers = developers;
-        genId++;
     }
 
     // If create Team with one developer
-    public Team(String name, Developer developer) {
+    public Team(int id, String name, Developer developer) {
+        this.id = id;
         this.name = name;
         this.developers.add(developer);
-        genId++;
     }
 
     public int getId() {

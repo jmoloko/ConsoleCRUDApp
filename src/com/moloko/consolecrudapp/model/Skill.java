@@ -4,14 +4,13 @@ package com.moloko.consolecrudapp.model;
  * @author Jack Milk
  */
 public class Skill {
-    private static int genId = 1;
 
-    int id = genId;
+    int id;
     String name;
 
-    public Skill(String name) {
+    public Skill(int id, String name) {
         this.name = name;
-        genId++;
+        this.id = id;
     }
 
     public int getId() {
@@ -25,10 +24,6 @@ public class Skill {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String fromWriteToConsole() {
-        return id + ": " + name;
     }
 
     @Override
